@@ -1,0 +1,7 @@
+# filepath: todo-fullstack/.gitignore
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
