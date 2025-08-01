@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ncyWBbt15Ss=",
+  "dgSpecHash": "XREV12qbkks=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ddmpn\\Coding\\vanaci\\challenges\\todo-fullstack\\backend\\backend.csproj",
+  "projectFilePath": "C:\\Users\\ddmpn\\Coding\\vanaci\\challenges\\todo-fullstack\\Backend\\Backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ddmpn\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.7\\microsoft.aspnetcore.openapi.9.0.7.nupkg.sha512",
     "C:\\Users\\ddmpn\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"

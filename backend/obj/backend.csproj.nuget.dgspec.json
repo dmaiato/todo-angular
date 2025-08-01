@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ddmpn\\Coding\\vanaci\\challenges\\todo-fullstack\\backend\\backend.csproj": {}
+    "C:\\Users\\ddmpn\\Coding\\vanaci\\challenges\\todo-fullstack\\Backend\\Backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ddmpn\\Coding\\vanaci\\challenges\\todo-fullstack\\backend\\backend.csproj": {
+    "C:\\Users\\ddmpn\\Coding\\vanaci\\challenges\\todo-fullstack\\Backend\\Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ddmpn\\Coding\\vanaci\\challenges\\todo-fullstack\\backend\\backend.csproj",
-        "projectName": "backend",
-        "projectPath": "C:\\Users\\ddmpn\\Coding\\vanaci\\challenges\\todo-fullstack\\backend\\backend.csproj",
+        "projectUniqueName": "C:\\Users\\ddmpn\\Coding\\vanaci\\challenges\\todo-fullstack\\Backend\\Backend.csproj",
+        "projectName": "Backend",
+        "projectPath": "C:\\Users\\ddmpn\\Coding\\vanaci\\challenges\\todo-fullstack\\Backend\\Backend.csproj",
         "packagesPath": "C:\\Users\\ddmpn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ddmpn\\Coding\\vanaci\\challenges\\todo-fullstack\\backend\\obj\\",
+        "outputPath": "C:\\Users\\ddmpn\\Coding\\vanaci\\challenges\\todo-fullstack\\Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
