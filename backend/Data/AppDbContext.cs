@@ -11,6 +11,6 @@ public class AppDbContext : DbContext
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
-    modelBuilder.Entity<TaskItem>().Property(t => t.Status).HasDefaultValue("A Fazer");
+    modelBuilder.Entity<TaskItem>().Property(t => t.Status).HasDefaultValue(TaskValues.A_Fazer);
   }
 }
