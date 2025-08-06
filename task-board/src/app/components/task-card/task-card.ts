@@ -8,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class TaskCard {
 
+  protected readonly title: string = "task-card works!";
+  protected showTitle: boolean = true;
+
+  handleButtonClick(event: any) {
+    event.preventDefault();
+    this.showTitle = !this.showTitle
+  }
 }

@@ -1,1 +1,5 @@
 <p>task-card works!</p>
+@if (showTitle) {
+    <h3>{{title}}</h3>
+}
+<button (click)="handleButtonClick($event)">Click Me!</button>
