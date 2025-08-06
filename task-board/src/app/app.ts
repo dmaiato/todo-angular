@@ -7,5 +7,5 @@ import { Component, signal } from '@angular/core';
   styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('task-board');
+  protected readonly header = signal('HEADER');
 }
