@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TaskService } from '../../services/task-service';
 
 @Component({
   selector: 'app-task-board',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './task-board.css'
 })
 export class TaskBoard {
-
+  private taskService = inject(TaskService);
 }
