@@ -1,5 +1,6 @@
-<div class="card">
-  <h3>{{ task.title }}</h3>
-  <p>{{ task.description }}</p>
-  <span class="status-badge">{{ task.status }}</span>
+<div class="rounded-lg flex flex-col border-2 border-slate-300">
+    <h3 class="font-bold bg-slate-300 px-3 py-1.5 rounded-t-md flex truncate">
+        {{ task.title }}
+    </h3>
+    <p class="px-3 py-2 truncate min-h-8">{{ task.description }}</p>
 </div>

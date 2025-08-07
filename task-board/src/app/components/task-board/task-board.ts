@@ -11,6 +11,7 @@ import { TaskCard } from "../task-card/task-card";
 })
 export class TaskBoard implements OnInit {
   tasks: Task[] = [];
+  protected statusList = ['A Fazer', 'Em Andamento', 'Concluído'];
 
   constructor(private taskService: TaskService) {}
 
@@ -18,5 +19,9 @@ export class TaskBoard implements OnInit {
     this.taskService.getTasks().subscribe(
       tasks => {this.tasks = tasks;},
     )
+  }
+
+  filterTasks(status: string): Task[] {
+    return this.tasks.filter(task => task.status === status);
   }
 }
