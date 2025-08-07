@@ -1,1 +1,12 @@
-<p>task-board works!</p>
+<div>
+    <h2>Quadro de tarefas</h2>
+
+    <div>
+        <div>
+            <h3>Status da tarefa</h3>
+            @for (task of tasks; track task.id) {
+                <app-task-card [task]="task"></app-task-card>
+            }
+        </div>
+    </div>
+</div>
