@@ -25,7 +25,7 @@ export class TaskCard {
     }
 
     onDelete() {
-        if (confirm('Are you sure you want to delete this task?')) {
+        if (confirm('Você tem certeza que deseja excluir esta tarefa?')) {
             this.delete.emit(this.task.id);
         }
     }
