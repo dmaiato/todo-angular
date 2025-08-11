@@ -1,15 +1,31 @@
-<div class="grid grid-cols-3 gap-8">
-    @for (status of statusList; track $index) {
-    <div class="flex flex-col gap-6 bg-gray-100 p-6 rounded-lg">
-        <h3 class="text-center">{{ statusList[$index] }}</h3>
-        <div class="flex flex-col gap-4">
-            @defer { @for (task of filterTasks(statusList[$index]); track
-            task.id) {
-            <app-task-card [task]="task"></app-task-card>
-            } } @loading {
-            <p>Loading...</p>
-            }
+<section class="flex flex-col gap-6 justify-between items-center">
+    <button
+        class="bg-teal-600 px-3 py-2 rounded-md text-white font-bold w-fit cursor-pointer"
+        (click)="handleCreateTask()"
+    >
+        New Task
+    </button>
+    <div class="grid grid-cols-3 gap-8">
+        @for (status of statusList; track $index) {
+        <div
+            class="flex flex-col gap-6 bg-gray-100 p-6 rounded-lg min-h-[450px]"
+        >
+            <h3 class="text-center text-[18px] font-medium">
+                {{ statusList[$index] }}
+            </h3>
+            <div class="flex flex-col gap-4">
+                @defer { @for (task of filterTasks(statusList[$index]); track
+                task.id) {
+                <app-task-card
+                    [task]="task"
+                    (edit)="handleEditTask($event)"
+                    (delete)="handleDeleteTask($event)"
+                ></app-task-card>
+                } } @loading {
+                <p>Loading...</p>
+                }
+            </div>
         </div>
+        }
     </div>
-    }
-</div>
+</section>

@@ -1,6 +1,26 @@
-<div class="rounded-lg flex flex-col border-2 border-slate-300">
-    <h3 class="font-bold bg-slate-300 px-3 py-1.5 rounded-t-md flex truncate">
-        {{ task.title }}
-    </h3>
+<div
+    class="rounded-lg flex flex-col border-2 border-slate-400 w-[350px] max-w-[350px]"
+>
+    <div
+        class="bg-slate-400 px-3 py-1.5 rounded-t-md flex justify-between items-center"
+    >
+        <h3 class="font-bold truncate">
+            {{ task.title }}
+        </h3>
+        <div class="flex gap-2">
+            <button
+                class="text-white bg-teal-500 size-5 font-mono font-bold leading-0 flex items-center justify-center rounded-full cursor-pointer"
+                (click)="onEdit()"
+            >
+                +
+            </button>
+            <button
+                class="text-white bg-rose-500 size-5 font-mono font-bold leading-0 flex items-center justify-center rounded-full cursor-pointer"
+                (click)="onDelete()"
+            >
+                -
+            </button>
+        </div>
+    </div>
     <p class="px-3 py-2 truncate min-h-8">{{ task.description }}</p>
 </div>
