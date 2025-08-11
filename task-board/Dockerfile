@@ -1,5 +1,5 @@
 # Use the official Node.js image to build the Angular application
-FROM node:18 AS build
+FROM node:22 AS build
 WORKDIR /app
 
 # Copy the package.json and install dependencies
@@ -15,7 +15,7 @@ FROM nginx:alpine
 COPY --from=build /app/dist/task-board /usr/share/nginx/html
 
 # Expose the port the app runs on
-EXPOSE 80
+EXPOSE 4200
 
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]

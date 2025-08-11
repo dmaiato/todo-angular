@@ -1,33 +1,65 @@
-version: "3.8"
-
 services:
-  backend:
+  webapi:
     build:
-      context: .
-      dockerfile: backend/Dockerfile
+      context: ./backend/
+      dockerfile: Dockerfile
     ports:
-      - "5000:80"
+      - "5280:5280"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DefaultConnection=Host=db;Database=mydb;Username=myuser;Password=mypassword
+      - ASPNETCORE_URLS=http://+:5280
+      - ConnectionStrings__DefaultConnection=Host=postgres;Database=webapidb;Username=postgres;Password=postgres
     depends_on:
-      - db
+      postgres:
+        condition: service_healthy
+    networks:
+      - webapi-network
+    restart: unless-stopped
+  
+  migrations:
+    build:
+      context: ./backend/
+      dockerfile: Dockerfile
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=postgres;Database=webapidb;Username=postgres;Password=postgres
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - webapi-network
+    command: ["dotnet", "ef", "database", "update"]
+    restart: "no"
 
   task-board:
     build:
-      context: .
-      dockerfile: task-board/Dockerfile
+      context: ./task-board
+      dockerfile: Dockerfile
     ports:
-      - "4200:80"
+      - "4200:4200"
 
-  db:
-    image: postgres:latest
+  postgres:
+    image: postgres:17
     environment:
-      POSTGRES_DB: mydb
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: webapidb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     ports:
       - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql # Optional: for initial schema
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - webapi-network
+    restart: unless-stopped
 
 volumes:
-  pgdata:
+  postgres_data:
+
+networks:
+  webapi-network:
+    driver: bridge
