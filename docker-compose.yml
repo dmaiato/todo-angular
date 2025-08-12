@@ -33,9 +33,10 @@ services:
   task-board:
     build:
       context: ./task-board
-      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: production
     ports:
-      - "4200:4200"
+      - 4200:4200
 
   postgres:
     image: postgres:17
