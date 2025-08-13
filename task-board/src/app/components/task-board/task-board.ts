@@ -23,7 +23,7 @@ export class TaskBoard implements OnInit {
         });
     }
 
-    sortTasksById(tasks: Task[]): Task[] {
+    private sortTasksById(tasks: Task[]): Task[] {
         return tasks.sort((a, b) => a.id - b.id);
     }
 
